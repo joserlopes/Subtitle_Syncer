@@ -33,11 +33,12 @@ class MyTime:
         return False
 
     def __ge__(self, other):
-        if self.hours >= other.hours: 
+        if self.hours > other.hours: 
             return True
-        elif self.hours == other.hours and self.minutes >= other.minutes:            
+        elif self.hours == other.hours and self.minutes > other.minutes:                    
             return True
         elif self.hours == other.hours and self.minutes == other.minutes and self.seconds >= other.seconds:
+            
             return True
         return False
 
