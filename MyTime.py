@@ -50,6 +50,3 @@ class MyTime:
             return True
         return False
         
-        
-
-        
