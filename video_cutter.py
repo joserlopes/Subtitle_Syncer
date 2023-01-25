@@ -19,12 +19,14 @@ def main(args):
     seconds_time_begin_seconds = time_to_seconds(seconds_time_begin_parsed["hours"], seconds_time_begin_parsed["minutes"], seconds_time_begin_parsed["seconds"])
     seconds_time_end_seconds = time_to_seconds(seconds_time_end_parsed["hours"], seconds_time_end_parsed["minutes"], seconds_time_end_parsed["seconds"]) 
 
+    to_save_path = args[4]
+
     clip1 = VideoFileClip(args[0]).subclip(0, first_time_seconds)
     clip2 = VideoFileClip(args[0]).subclip(seconds_time_begin_seconds, seconds_time_end_seconds)
 
     final_clip = concatenate_videoclips([clip1, clip2])
 
-    final_clip.write_videofile("output_1.mp4")
+    final_clip.write_videofile(to_save_path)
 
 if __name__ == "__main__":
     main(sys.argv[1:])
